@@ -1,31 +1,22 @@
 using System;
 
 class Program {
-  static void Main(string[] args) {
-    int a, b, c;
-    string[] input = Console.ReadLine().Split();
-    a = int.Parse(input[0]);
-    b = int.Parse(input[1]);
-    c = int.Parse(input[2]);
-    if(a > b)
-    {
-        if(b > c)
-        {
-            if((b - c) < (a - b)) Console.WriteLine(":)");
-            else Console.WriteLine(":(");
+    static void Main(string[] args) {
+        int E, F, C;
+        string[] valores = Console.ReadLine().Split(' ');
+        E = int.Parse(valores[0]);
+        F = int.Parse(valores[1]);
+        C = int.Parse(valores[2]);
+
+        int total_vazia = E + F;
+        int total_bebidas = 0;
+
+        while (total_vazia >= C) {
+            int new_drinks = total_vazia / C;
+            total_bebidas += new_drinks;
+            total_vazia = total_vazia % C + new_drinks;
         }
-        else Console.WriteLine(":)");
+
+        Console.WriteLine(total_bebidas);
     }
-    else if(b > a)
-    {
-        if(c > b)
-        {
-            if((c - b) < (b - a)) Console.WriteLine(":(");
-            else Console.WriteLine(":)");
-        }
-        else Console.WriteLine(":(");
-    }
-    else if(c > b) Console.WriteLine(":)");
-    else Console.WriteLine(":(");
-  }
 }

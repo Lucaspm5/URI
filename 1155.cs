@@ -1,18 +1,11 @@
-#include <stdio.h>
+using System; 
 
-int par(int x)
-{
-    if(x%2 == 0)
-    {
-        printf("Par\n");
-    }else{ 
-        printf("Impar\n");
+class URI {
+
+    static void Main(string[] args) { 
+
+        Console.WriteLine("{0:F2}", 6.00);
+
     }
-}
-int main(void)
-{
-    int x;
-    scanf("%d",&x);
-    printf("%d",par(x));
-    return 0;
+
 }
